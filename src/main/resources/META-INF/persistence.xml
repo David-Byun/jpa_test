@@ -10,11 +10,13 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org
 <property name="javax.persistence.jdbc.password" value=""/>
 <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
 <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+<!-- 방언 설정 하는 속성 -->
 <!-- 옵션 -->
 <property name="hibernate.show_sql" value="true"/>
 <property name="hibernate.format_sql" value="true"/>
 <property name="hibernate.use_sql_comments" value="true"/>
-<!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+<!--    option create 로 하면 테이블 자동 생성 및 변경됨 : 운영에서는 사용하면 안됨! -->
+<property name="hibernate.hbm2ddl.auto" value="create" />
 </properties>
 </persistence-unit>
 </persistence>

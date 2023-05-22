@@ -1,34 +1,18 @@
 package jpa.test;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 //jpa 사용하는 애 인식
 @Entity
-//@Table(name = "USER")
 public class Member {
 
-    //pk가 뭔지 알려줘야함
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "MEMBER_ID")
     private Long id;
 
-    //@Column(name= "username")
+    @Column(length = 10, name="USERNAME")
     private String name;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column(name = "TEAM_ID")
+    private Long teamId;
 }
